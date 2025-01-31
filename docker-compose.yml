@@ -85,6 +85,6 @@ services:
       - kafka1
       - kafbat-ui
       - zoo1
-    command: ./bin/flink run -m jobmanager:8081 -py ./transformations/transformation_with_state.py #change according to the file you want to run
+    command: ./bin/flink run -m jobmanager:8081 -py ./transformations/transformation_with_state.py 
     volumes: 
       - ./transformations/:/opt/flink/transformations
