@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "namespace": "examples",
+  "name": "TransactionWithStatus",
+  "fields": [
+    {
+      "name": "Value",
+      "type": "int"
+    },
+    {
+      "name": "MerchantID",
+      "type": "string"
+    },
+    {
+      "name": "Approved",
+      "type": "boolean"
+    }
+  ]
+}

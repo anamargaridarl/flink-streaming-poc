@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "namespace": "examples",
+  "name": "Transaction",
+  "fields": [
+    {
+      "name": "Value",
+      "type": "int"
+    },
+    {
+      "name": "MerchantID",
+      "type": "string"
+    }
+  ]
+}
