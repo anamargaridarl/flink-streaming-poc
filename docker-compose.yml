@@ -48,12 +48,6 @@ services:
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
     depends_on:
       - zoo1
-  kafka-consumer:
-    image: confluentinc/cp-kafka:7.3.2
-    container_name: kafka-consumer
-    depends_on:
-      - kafka1
-    entrypoint: ["sh", "-c", "sleep 5 && kafka-console-consumer --bootstrap-server kafka1:29092 --topic input-topic --group test_group --from-beginning"]
   jobmanager:
     build:
       dockerfile: ./Dockerfile
@@ -85,6 +79,6 @@ services:
       - kafka1
       - kafbat-ui
       - zoo1
-    command: ./bin/flink run -m jobmanager:8081 -py ./transformations/transformation_with_state.py 
+    command: ./bin/flink run -m jobmanager:8081 -d ./transformations/quickstart-1.0.0.jar 1
     volumes: 
       - ./transformations/:/opt/flink/transformations
