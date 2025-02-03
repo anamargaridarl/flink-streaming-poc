@@ -13,10 +13,6 @@ Testing environment:
 - TaskManager
 - Runner [TODO] find better solution 
 
-# Index
-
-[TOC]
-
 ## How to run 
 
 ```
@@ -49,7 +45,7 @@ This testing environment includes a Kafka stack to connect Flink to Kafka. This 
 
 [TODO]: add schema registry to docker compose for future serialization
 
-#### Kafka Produce
+### Kafka Producer
 
 A script with a kafka producer so that you can feed data to the topics in the test environment. 
 
