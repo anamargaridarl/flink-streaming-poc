@@ -52,15 +52,14 @@ This testing environment includes a Kafka stack to connect Flink to Kafka. This 
 A script with a kafka producer so that you can feed data to the topics in the test environment. 
 
 
+
+## Annex [TODO]
+
 ### Java Flink Project 
 
 The java_flink_project has a project set to run in **Intelij** with **Gradle** to allow you to develop and test your Java transformations. 
 
 To run the code in the docker environment you can generate a jar from the project. To do this build the project with Gradle and copy the jar file at ```build/libs``` to the ```transformations``` folder. Don't forget to point the runner to the file. For more details on this check the Annex section.
 
-
-
-## Annex [TODO]
-
-### How to configure Intelij to run the project
+#### How to configure Intelij to run the project
 
