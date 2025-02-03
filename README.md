@@ -54,4 +54,4 @@ A script with a kafka producer so that you can feed data to the topics in the te
 
 ### Java Flink Project 
 
-This project is set to run in **Intelij** with **Gradle** to allow you to develop and test your Java transformations. After you can also generate a jar from the project and run it in the docker environment.
+The java_flink_project has a project set to run in **Intelij** with **Gradle** to allow you to develop and test your Java transformations. After you can also generate a jar from the project and run it in the docker environment.
