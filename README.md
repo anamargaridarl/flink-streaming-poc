@@ -51,9 +51,21 @@ This testing environment includes a Kafka stack to connect Flink to Kafka. This 
 
 A script with a kafka producer so that you can feed data to the topics in the test environment. 
 
+## Provided Transformations
 
+# Java
+- 
+- 
+- 
+- 
+- 
 
-## Annex [TODO]
+# Pyflink
+
+- 
+- 
+
+## Annex
 
 ### Java Flink Project 
 
