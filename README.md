@@ -1,6 +1,6 @@
 # flink-streaming-poc [STILL IN PROGRESS]
 
-Some exploratory work on Flink data streaming. 
+This repository serves as a tutorial for first-time users of Apache Flink, providing a step-by-step guide on how to use Flink effectively. The focus is on real-time data streaming and its integration with Apache Kafka. Through practical examples, users will learn how to process, transform, and analyze streaming data using Flink.
 
 [Flink oficial documentation](https://nightlies.apache.org/flink/flink-docs-release-1.20/)
 
@@ -12,6 +12,10 @@ Testing environment:
 - JobManager 
 - TaskManager
 - Runner [TODO] find better solution 
+
+# Index
+
+[TOC]
 
 ## How to run 
 
@@ -26,9 +30,9 @@ docker compose up
 
 ### Runner
 
-The runner container makes use of the Flink CLI to send jobs to the Flink running environment. Your job's code should be in the ``transformations/`` folder.
+We define a separate runner container to submit jobs without interfering with the Flink cluster. The Flink cluster consists of a JobManager, responsible for job scheduling and coordination, and TaskManagers, which handle execution. This separation allows for greater flexibility in configuring job submission strategies, retry logic, and dependencies within the runner container.
 
-In the docker-compose make sure that the runner ```command``` points to the code you want to run. To send a job start the container. It will stop once it finishes.
+The runner container uses the Flink CLI to submit jobs. To execute a job, ensure that your code is placed inside the transformations/ directory. In your Docker Compose configuration, set the command field to the path of the job you want to run. The runner container will automatically stop once the job completes.
 
 e.g. to run a pyflink transformation
 ```
@@ -38,8 +42,6 @@ e.g. to run a java jar transformation
 ```
 command: ./bin/flink run -m jobmanager:8081 -d ./transformations/quickstart-1.0.0.jar
 ```
-
-Alternatively, you could run the CLI by acessing the JobManager container and running the command. However, similarly to the runner, you would have to add the volume with the transformations to the jobmanager container.
 
 ### Kafka
 
@@ -54,4 +56,13 @@ A script with a kafka producer so that you can feed data to the topics in the te
 
 ### Java Flink Project 
 
-The java_flink_project has a project set to run in **Intelij** with **Gradle** to allow you to develop and test your Java transformations. After you can also generate a jar from the project and run it in the docker environment.
+The java_flink_project has a project set to run in **Intelij** with **Gradle** to allow you to develop and test your Java transformations. 
+
+To run the code in the docker environment you can generate a jar from the project. To do this build the project with Gradle and copy the jar file at ```build/libs``` to the ```transformations``` folder. Don't forget to point the runner to the file. For more details on this check the Annex section.
+
+
+
+## Annex [TODO]
+
+### How to configure Intelij to run the project
+
