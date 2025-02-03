@@ -15,6 +15,8 @@ Testing environment:
 
 ## How to run 
 
+![Docker setup](image.png)
+
 ```
 docker compose build
 docker compose up
