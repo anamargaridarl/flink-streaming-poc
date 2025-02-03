@@ -11,7 +11,7 @@ Testing environment:
 - Kafka UI
 - JobManager 
 - TaskManager
-- Runner [TODO] find better solution 
+- Runner
 
 ## How to run 
 
